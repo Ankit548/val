@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ankit ❤️ Kiran</title>
+
+<style>
+body{
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ff758c,#ffb199);
+    font-family:Arial, sans-serif;
+}
+
+.card{
+    background:#fff;
+    width:90%;
+    max-width:320px;
+    padding:24px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+h1{color:#ff4d6d;}
+
+.buttons{
+    display:flex;
+    gap:10px;
+    margin-top:20px;
+}
+
+button{
+    flex:1;
+    padding:14px 0;
+    border:none;
+    border-radius:12px;
+    font-size:16px;
+}
+
+#yes{background:#ff4d6d;color:#fff;}
+#no{background:#ddd;color:#000;}
+
+.hidden{display:none;}
+</style>
+</head>
+
+<body>
+
+<div class="card" id="q">
+    <h1>Kiran 💖</h1>
+    <p>Ankit has a question for you 😘</p>
+    <p>Will you be my Valentine? 🌹</p>
+
+    <div class="buttons">
+        <button id="yes">YES 😍</button>
+        <button id="no">NO 😝</button>
+    </div>
+</div>
+
+<div class="card hidden" id="done">
+    <h1>Hehehe 😈</h1>
+    <p>You are stuck with Ankit forever 💕</p>
+    <p>Happy Valentine’s Day Kiran 💐</p>
+</div>
+
+<script>
+var yes = document.getElementById("yes");
+var no = document.getElementById("no");
+var q = document.getElementById("q");
+var done = document.getElementById("done");
+
+var yesSize = 16;
+var noSize = 16;
+
+no.onclick = function(){
+    yesSize += 5;
+    noSize -= 3;
+    if(noSize < 8) noSize = 8;
+
+    yes.style.fontSize = yesSize + "px";
+    no.style.fontSize = noSize + "px";
+};
+
+yes.onclick = function(){
+    q.style.display="none";
+    done.style.display="block";
+};
+</script>
+
+</body>
+</html>
